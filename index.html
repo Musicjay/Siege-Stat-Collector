@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stat Collector</title>
+    <style media="screen">
+      th,tr{
+        padding: 15px;
+        text-align: center;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+    <script src="jquery.serialize-object.min.js"></script>
+  </head>
+  <body>
+    <table border="1" style="border-collapse: collapse; margin: 200px 120px">
+      <tr>
+        <th>Player Name</th>
+        <th>Kills</th>
+        <th>Deaths</th>
+        <th>Opening Kills</th>
+        <th>Opening Deaths</th>
+        <th>KOST</th>
+        <th>Survival</th>
+        <th>1vX</th>
+        <th>Plants</th>
+        <th>HS</th>
+        <th>Submit</th>
+      </tr>
+      <tr>
+        <form id="player-1-1">
+        <td> <input type="text" name="player_name"></td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kills" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="deaths" value=0 > <button type="button" class="add"><b>&plus;</b></button></td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="ok" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="od" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kost" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="srv" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="clutch" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="plant" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="hs" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="submit" id="submit-form-1">Submit</button> </td>
+        </form>
+      </tr>
+      <tr>
+        <form id="player-1-2">
+        <td> <input type="text" name="player_name"></td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kills" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="deaths" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="ok" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="od" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kost" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="srv" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="clutch" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="plant" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="hs" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="submit" id="submit-form-2">Submit</button> </td>
+        </form>
+      </tr>
+      <tr>
+        <form id="player-1-3">
+        <td> <input type="text" name="player_name"></td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kills" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="deaths" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="ok" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="od" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kost" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="srv" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="clutch" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="plant" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="hs" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="submit" id="submit-form-3">Submit</button> </td>
+        </form>
+      </tr>
+      <tr>
+        <form id="player-1-4">
+        <td> <input type="text" name="player_name"></td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kills" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="deaths" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="ok" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="od" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kost" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="srv" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="clutch" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="plant" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="hs" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="submit" id="submit-form-4">Submit</button> </td>
+        </form>
+      </tr>
+      <tr>
+        <form id="player-1-5">
+        <td> <input type="text" name="player_name"></td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kills" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="deaths" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="ok" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="od" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kost" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="srv" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="clutch" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="plant" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="hs" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="submit" id="submit-form-5">Submit</button> </td>
+        </form>
+      </tr>
+      <tr>
+        <form id="player-2-1">
+        <td> <input type="text" name="player_name"></td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kills" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="deaths" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="ok" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="od" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kost" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="srv" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="clutch" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="plant" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="hs" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="submit" id="submit-form-6">Submit</button> </td>
+        </form>
+      </tr>
+      <tr>
+        <form id="player-2-2">
+        <td> <input type="text" name="player_name"></td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kills" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="deaths" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="ok" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="od" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kost" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="srv" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="clutch" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="plant" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="hs" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="submit" id="submit-form-7">Submit</button> </td>
+        </form>
+      </tr>
+      <tr>
+        <form id="player-2-3">
+        <td> <input type="text" name="player_name"></td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kills" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="deaths" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="ok" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="od" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kost" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="srv" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="clutch" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="plant" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="hs" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="submit" id="submit-form-8">Submit</button> </td>
+        </form>
+      </tr>
+      <tr>
+        <form id="player-2-4">
+        <td> <input type="text" name="player_name"></td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kills" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="deaths" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="ok" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="od" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kost" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="srv" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="clutch" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="plant" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="hs" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="submit" id="submit-form-9">Submit</button> </td>
+        </form>
+      </tr>
+      <tr>
+        <form id="player-2-5">
+        <td> <input type="text" name="player_name"></td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kills" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="deaths" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="ok" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="od" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="kost" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="srv" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="clutch" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="plant" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="button" class="sub"><b>&minus;</b></button> <input type="text" size=1 name="hs" value=0 > <button type="button" class="add"><b>&plus;</b></button> </td>
+        <td> <button type="submit" id="submit-form-10">Submit</button> </td>
+        </form>
+      </tr>
+    </table>
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $(".add").on("click",function(){
+        var $button = $(this);
+        var oldValue = $button.parent().find("input").val();
+        var newVal = parseFloat(oldValue) + 1;
+        $button.parent().find("input").val(newVal);
+      });
+      $(".sub").on("click",function(){
+        var $button = $(this);
+        var oldValue = $button.parent().find("input").val();
+        if (oldValue > 0){
+           var newVal = parseFloat(oldValue) - 1;
+         }
+        else {
+          newVal = 0;
+        }
+        $button.parent().find("input").val(newVal);
+      });
+    });
+
+    var $form1 = $('form#player-1-1'), $form2 = $('form#player-1-2'), $form3 = $('form#player-1-3'), $form4 = $('form#player-1-4'), $form5 = $('form#player-1-5'), $form6 = $('form#player-2-1'), $form7 = $('form#player-2-2'), $form8 = $('form#player-2-3'), $form9 = $('form#player-2-4'), $form10 = $('form#player-2-5'),
+    url = 'https://script.google.com/macros/s/AKfycbxnA6hrUVf6y9QAA_0gyJc_VWiySjAA9Kjy62CPEi3sC8rdtno5/exec'
+
+    $('#submit-form-1').on('click', function(e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form1.serializeObject()
+      });
+    });
+    $('#submit-form-2').on('click', function(e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form2.serializeObject()
+      });
+    });
+    $('#submit-form-3').on('click', function(e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form3.serializeObject()
+      });
+    });
+    $('#submit-form-4').on('click', function(e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form4.serializeObject()
+      });
+    });
+    $('#submit-form-5').on('click', function(e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form5.serializeObject()
+      });
+    });
+    $('#submit-form-6').on('click', function(e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form6.serializeObject()
+      });
+    });
+    $('#submit-form-7').on('click', function(e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form7.serializeObject()
+      });
+    });
+    $('#submit-form-8').on('click', function(e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form8.serializeObject()
+      });
+    });
+    $('#submit-form-9').on('click', function(e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form9.serializeObject()
+      });
+    });
+    $('#submit-form-10').on('click', function(e) {
+      e.preventDefault();
+      var jqxhr = $.ajax({
+        url: url,
+        method: "GET",
+        dataType: "json",
+        data: $form10.serializeObject()
+      });
+    });
+    </script>
+  </body>
+</html>
